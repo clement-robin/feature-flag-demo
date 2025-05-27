@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [],
+    unoptimized: true,
+  },
+  output: "export",
+  basePath: "/kameleoon-feature-flag",
+  assetPrefix: "/kameleoon-feature-flag/",
 };
 
-export default nextConfig;
+module.exports = nextConfig;
