@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 interface ProductCardProps {
@@ -11,15 +10,22 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const imageUrl = product.image.startsWith("http")
+    ? product.image
+    : `https://clement-robin.github.io/feature-flag-demo${product.image}`;
+
   return (
     <div className="product-card">
       <Link href={`/product/${product.id}`}>
         <div className="relative w-full h-64">
-          <Image
-            src={product.image}
+          <img
+            src={imageUrl}
             alt={product.name || "Product image"}
-            fill
-            style={{ objectFit: "cover" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
             className="rounded-t-lg"
           />
         </div>

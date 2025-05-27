@@ -6,13 +6,15 @@ interface ProductImageProps {
 }
 
 export default function ProductImage({ image, name }: ProductImageProps) {
+  const imageUrl = image.startsWith("http")
+    ? image
+    : `https://clement-robin.github.io/feature-flag-demo${image}`;
+
   return (
     <div className="relative w-full">
-      <Image
-        src={image}
+      <img
+        src={imageUrl}
         alt={name || "Product image"}
-        width={800}
-        height={800}
         style={{
           width: "100%",
           height: "auto",
@@ -20,7 +22,6 @@ export default function ProductImage({ image, name }: ProductImageProps) {
           objectFit: "contain",
         }}
         className="rounded-lg"
-        priority
       />
     </div>
   );
