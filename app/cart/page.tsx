@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Cart,  getStoredCart } from "@/app/types/cart";
+import { Cart, getStoredCart } from "@/types/cart";
 import CartListItems from "../components/Cart/CartListItems";
 
 export default function CartPage() {
@@ -18,7 +18,10 @@ export default function CartPage() {
     window.addEventListener("cartUpdated", handleCartUpdate as EventListener);
 
     return () => {
-      window.removeEventListener("cartUpdated", handleCartUpdate as EventListener);
+      window.removeEventListener(
+        "cartUpdated",
+        handleCartUpdate as EventListener
+      );
     };
   }, []);
 

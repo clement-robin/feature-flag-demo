@@ -1,4 +1,4 @@
-import { Cart, saveCart } from "@/app/types/cart";
+import { Cart, saveCart } from "@/types/cart";
 import { products } from "@/data/products";
 import CartItem from "./CartItem";
 

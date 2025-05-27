@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { CartItem, getStoredCart } from "@/app/types/cart";
+import { CartItem, getStoredCart } from "@/types/cart";
 import CartIcon from "@/app/components/Logos/CartIcon";
 
 export default function CartComponent({ className }: { className?: string }) {

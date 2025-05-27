@@ -6,6 +6,7 @@ interface ProductImageProps {
 }
 
 export default function ProductImage({ image, name }: ProductImageProps) {
+  // Assurez-vous que l'URL de l'image est absolue
   const imageUrl = image.startsWith("http")
     ? image
     : `https://clement-robin.github.io/feature-flag-demo${image}`;

@@ -5,7 +5,7 @@ import {
   getStoredCart,
   saveCart,
   CART_STORAGE_KEY,
-} from "@/app/types/cart";
+} from "@/types/cart";
 import React, { useState, useEffect } from "react";
 
 export default function ProductAddToCart({

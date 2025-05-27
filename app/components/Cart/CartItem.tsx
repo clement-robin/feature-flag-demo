@@ -4,7 +4,7 @@ import {
   CartItem as CartItemType,
   getStoredCart,
   saveCart,
-} from "@/app/types/cart";
+} from "@/types/cart";
 import CartItemDescription from "./CartItemDescription";
 import CartItemValues from "./CartItemValues";
 

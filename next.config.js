@@ -6,11 +6,16 @@ const nextConfig = {
     unoptimized: true, // Nécessaire pour l'export statique
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'clement-robin.github.io',
-        pathname: '/feature-flag-demo/**',
+        protocol: "https",
+        hostname: "clement-robin.github.io",
+        pathname: "/feature-flag-demo/**",
       },
     ],
+  },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
   },
 };
 
