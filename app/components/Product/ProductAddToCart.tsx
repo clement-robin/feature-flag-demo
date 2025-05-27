@@ -107,7 +107,7 @@ export default function ProductAddToCart({
         className="bg-black text-white text-lg font-bold px-4 py-2 rounded-md w-full cursor-pointer"
         onClick={handleAddToCart}
       >
-        Ajouter au panier2
+        Ajouter au panier
       </button>
       {errorState && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4">

@@ -26,6 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <script
+        type="text/javascript"
+        src="//hpy9fwy751.kameleoon.io/engine.js"
+        async={true}
+        fetchPriority="high"
+      />
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
