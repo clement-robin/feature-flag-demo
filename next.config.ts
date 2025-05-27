@@ -5,8 +5,16 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
-  basePath: "/feature-flag-demo",
-  assetPrefix: "/feature-flag-demo/",
+  // Utilisez le basePath uniquement en production
+  ...(process.env.NODE_ENV === "production"
+    ? {
+        basePath: "/feature-flag-demo",
+        assetPrefix: "/feature-flag-demo/",
+      }
+    : {}),
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;

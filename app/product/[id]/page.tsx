@@ -8,6 +8,12 @@ interface Props {
   }>;
 }
 
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id.toString(),
+  }));
+}
+
 export default async function Page({ params }: Props) {
   const { id } = await params;
   const product = products.find((product) => product.id === id);

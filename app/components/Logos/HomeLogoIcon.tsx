@@ -1,6 +1,15 @@
+"use client";
+
 export default function HomeLogoComponent(props: any) {
   return (
-    <svg className="_logo__icon_1mh35_109" viewBox="0 0 32 32" {...props}>
+    <svg
+      className="_logo__icon_1mh35_109"
+      viewBox="0 0 32 32"
+      width="32"
+      height="32"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <g fillRule="evenodd" clipRule="evenodd">
         <path
           fill="#FE2020"
@@ -25,6 +34,4 @@ export default function HomeLogoComponent(props: any) {
       </g>
     </svg>
   );
-};
-
-
+}

@@ -37,9 +37,8 @@ export default function ProductPresentation({ product }: { product: any }) {
         />
       </div>
       <div className="pt-4">
-        <ProductQuantitySelector2 onQuantityChange={setQuantity}/>
+        <ProductQuantitySelector2 onQuantityChange={setQuantity} />
       </div>
-      
 
       <ProductAddToCart
         price={product.price}

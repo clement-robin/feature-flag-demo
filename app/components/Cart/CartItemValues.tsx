@@ -19,11 +19,10 @@ export default function CartItemValues({
       <p className="font-medium">{price} €</p>
       <div className="mt-1">
         <ProductQuantitySelector2
-            onQuantityChange={onQuantityChange}
-            initialQuantity={quantity}
+          onQuantityChange={onQuantityChange}
+          initialQuantity={quantity}
         />
       </div>
-      
     </div>
   );
 }
