@@ -5,8 +5,8 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
-  basePath: "/kameleoon-feature-flag",
-  assetPrefix: "/kameleoon-feature-flag/",
+  basePath: "/feature-flag-demo",
+  assetPrefix: "/feature-flag-demo/",
 };
 
 module.exports = nextConfig;
