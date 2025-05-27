@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [],
-    unoptimized: true,
-  },
   output: "export",
   // Utilisez le basePath uniquement en production
   ...(process.env.NODE_ENV === "production"
@@ -14,6 +10,15 @@ const nextConfig = {
     : {}),
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  images: {
+    unoptimized: true,
+    // Utilisez le path uniquement en production
+    ...(process.env.NODE_ENV === "production"
+      ? {
+          path: "/feature-flag-demo",
+        }
+      : {}),
   },
 };
 

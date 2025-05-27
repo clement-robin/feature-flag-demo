@@ -1,25 +1,33 @@
-import { Product } from "@/app/types/product";
+import Image from "next/image";
 import Link from "next/link";
 
-export default function ProductCard({ product }: { product: Product }) {
+interface ProductCardProps {
+  product: {
+    id: string;
+    name: string;
+    image: string;
+    price: number;
+  };
+}
+
+export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Link
-      href={`/product/${product.id}`}
-      className="hover:opacity-75 transition duration-300 "
-    >
-      <div className="overflow-hidden h-[220px] w-[220px]">
-        <img
-          src={product.image}
-          alt={product.name}
-          width={220}
-          height={180}
-          className="w-full h-[220px] object-cover object-center"
-        />
-      </div>
-      <div className="flex justify-between items-center mt-1">
-        <h3>{product.name}</h3>
-        <p>{product.price} €</p>
-      </div>
-    </Link>
+    <div className="product-card">
+      <Link href={`/product/${product.id}`}>
+        <div className="relative w-full h-64">
+          <Image
+            src={product.image}
+            alt={product.name || "Product image"}
+            fill
+            style={{ objectFit: "cover" }}
+            className="rounded-t-lg"
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="text-lg font-semibold">{product.name}</h3>
+          <p className="text-gray-600">{product.price}€</p>
+        </div>
+      </Link>
+    </div>
   );
 }

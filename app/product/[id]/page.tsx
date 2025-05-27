@@ -23,9 +23,13 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <div className="flex gap-4">
-      <ProductImage image={product.image} />
-      <ProductPresentation product={product} />
+    <div className="flex gap-2">
+      <div className="w-2/3">
+        <ProductImage image={product.image} name={product.name} />
+      </div>
+      <div className="w-1/3">
+        <ProductPresentation product={product} />
+      </div>
     </div>
   );
 }
