@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <script
-        type="text/javascript"
-        src="//hpy9fwy751.kameleoon.io/engine.js"
-        async={true}
-        fetchPriority="high"
-      />
+      <head>
+        <Script
+          type="text/javascript"
+          src="//hpy9fwy751.kameleoon.io/engine.js"
+          async={true}
+        />
+      </head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}

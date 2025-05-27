@@ -15,6 +15,7 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 shadow-sm z-50 flex justify-between items-center h-14 w-full px-14 bg-white">
+        
         <div className="flex items-center">
           <Link href="/">
             <HomeLogoIcon className="w-10 h-10" />
