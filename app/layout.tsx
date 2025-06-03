@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Script from "next/script";
+import KameleoonCookie from "./components/Kameleoon/KameleoonCookie";
+import KameleoonProvider from "./components/Kameleoon/KameleoonProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <KameleoonCookie />
       <head>
         <Script
           type="text/javascript"

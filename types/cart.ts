@@ -1,16 +1,37 @@
 export interface CartItem {
   id: string;
   quantity: number;
-  size: string;
-  color: string;
   price: number;
   name: string;
   slug: string;
   image: string;
   description: string;
   sku: string;
-  colors: Array<{ name: string; hex: string }>;
-  sizes: string[];
+  type: "product" | "travel" | "event" | "subscription";
+  
+  size?: string;
+  color?: string;
+  colors?: Array<{ name: string; hex: string }>;
+  sizes?: string[];
+  
+  departureDate?: string;
+  destination?: string;
+  duration?: string;
+  difficulty?: string;
+  category?: string;
+  
+  eventId?: string;
+  ticketCategoryId?: string;
+  ticketCategoryName?: string;
+  eventDate?: string;
+  eventTime?: string;
+  venue?: string;
+  artist?: string;
+  
+  subscriptionDuration?: "monthly" | "annual";
+  frequency?: string;
+  contentType?: "newspaper" | "magazine" | "premium";
+  features?: string[];
 }
 
 export interface Cart {

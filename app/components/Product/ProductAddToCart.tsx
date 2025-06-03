@@ -40,7 +40,7 @@ export default function ProductAddToCart({
   const [errorState, setErrorState] = useState<string | null>(null);
 
   useEffect(() => {
-    // Initialiser le panier depuis le sessionStorage
+    
     const cart = getStoredCart();
     if (!cart) {
       saveCart({ items: [], total: 0 });
@@ -56,26 +56,28 @@ export default function ProductAddToCart({
     const newItem: CartItem = {
       id,
       quantity,
-      size: selectedSize,
-      color: selectedColor,
       price,
       name,
       slug,
       image,
       description,
       sku,
+      type: "product",
+      size: selectedSize,
+      color: selectedColor,
       colors,
       sizes,
     };
 
-    // Récupérer le panier actuel
+    
     const cart = getStoredCart();
 
     const existingItemIndex = cart.items.findIndex(
       (item) =>
         item.id === id &&
         item.size === selectedSize &&
-        item.color === selectedColor
+        item.color === selectedColor &&
+        item.type === "product"
     );
 
     if (existingItemIndex !== -1) {
@@ -93,7 +95,7 @@ export default function ProductAddToCart({
     saveCart(cart);
     setErrorState(null);
 
-    // Émettre l'événement de mise à jour
+    
     window.dispatchEvent(
       new CustomEvent("cartUpdated", {
         detail: cart,

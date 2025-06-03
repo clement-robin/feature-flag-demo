@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // Pour la génération statique
-  basePath: "/feature-flag-demo", // Le nom de votre repo
+  output: "export", 
+  basePath: "/feature-flag-demo", 
   images: {
-    unoptimized: true, // Nécessaire pour l'export statique
+    unoptimized: true, 
     remotePatterns: [
       {
         protocol: "https",
@@ -13,8 +13,8 @@ const nextConfig = {
     ],
   },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
+    
+    
     ignoreDuringBuilds: true,
   },
 };

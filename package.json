@@ -10,6 +10,11 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@kameleoon/javascript-sdk": "^4.10.0",
+    "@kameleoon/nodejs-event-source": "^1.1.0",
+    "@kameleoon/nodejs-requester": "^1.2.0",
+    "@kameleoon/nodejs-sdk": "^5.10.0",
+    "@kameleoon/nodejs-visitor-code-manager": "^1.1.0",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

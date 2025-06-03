@@ -1,6 +1,8 @@
 "use client";
 
-export default function ConnexionLogo(props: any) {
+import React from "react";
+
+export default function LoginIcon(props: any) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

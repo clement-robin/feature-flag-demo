@@ -1,12 +1,13 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { CartItem, getStoredCart } from "@/types/cart";
-import CartIcon from "@/app/components/Logos/CartIcon";
+import CartIcon from "@/app/components/Icons/CartIcon";
 
 export default function CartComponent({ className }: { className?: string }) {
   const [itemCount, setItemCount] = useState(0);
 
   useEffect(() => {
-    // Initialiser le compteur avec les données du sessionStorage
+    
     const cart = getStoredCart();
     const count =
       cart?.items?.reduce((sum: number, item) => sum + item.quantity, 0) || 0;

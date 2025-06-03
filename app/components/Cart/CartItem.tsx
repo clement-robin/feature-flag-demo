@@ -13,21 +13,37 @@ export default function CartItem({
   handleRemoveItem,
 }: {
   item: CartItemType;
-  handleRemoveItem: (
-    id: string,
-    size: string,
-    color: string,
-    image: string
-  ) => void;
+  handleRemoveItem: (item: CartItemType) => void;
 }) {
   const handleQuantityChange = (newQuantity: number) => {
     const cart = getStoredCart();
-    const itemIndex = cart.items.findIndex(
-      (cartItem) =>
-        cartItem.id === item.id &&
-        cartItem.size === item.size &&
-        cartItem.color === item.color
-    );
+    let itemIndex = -1;
+
+    if (item.type === "product") {
+      itemIndex = cart.items.findIndex(
+        (cartItem) =>
+          cartItem.id === item.id &&
+          cartItem.size === item.size &&
+          cartItem.color === item.color &&
+          cartItem.type === "product"
+      );
+    } else if (item.type === "travel") {
+      itemIndex = cart.items.findIndex(
+        (cartItem) =>
+          cartItem.id === item.id &&
+          cartItem.departureDate === item.departureDate &&
+          cartItem.type === "travel"
+      );
+    } else if (item.type === "event") {
+      itemIndex = cart.items.findIndex(
+        (cartItem) => cartItem.id === item.id && cartItem.type === "event"
+      );
+    } else if (item.type === "subscription") {
+      itemIndex = cart.items.findIndex(
+        (cartItem) =>
+          cartItem.id === item.id && cartItem.type === "subscription"
+      );
+    }
 
     if (itemIndex !== -1) {
       cart.items[itemIndex].quantity = newQuantity;
@@ -46,17 +62,25 @@ export default function CartItem({
     }
   };
 
+  const getItemKey = () => {
+    if (item.type === "product") {
+      return `${item.id}-${item.size}-${item.color}`;
+    } else if (item.type === "travel") {
+      return `${item.id}-${item.departureDate}`;
+    } else if (item.type === "event") {
+      return item.id;
+    } else if (item.type === "subscription") {
+      return item.id;
+    }
+    return item.id;
+  };
+
   return (
     <div
-      key={`${item.id}-${item.size}-${item.color}`}
+      key={getItemKey()}
       className="flex justify-between items-center border-b pb-4"
     >
-      <CartItemDescription
-        name={item.name}
-        size={item.size}
-        color={item.color}
-        image={item.image}
-      />
+      <CartItemDescription item={item} />
 
       <div className="text-right">
         <div className="flex justify-between items-center gap-4">
@@ -67,9 +91,7 @@ export default function CartItem({
           />
 
           <button
-            onClick={() =>
-              handleRemoveItem(item.id, item.size, item.color, item.image)
-            }
+            onClick={() => handleRemoveItem(item)}
             className="mt-2 text-red-600 hover:text-red-800 text-sm"
           >
             Supprimer

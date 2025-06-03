@@ -16,7 +16,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     : `https://clement-robin.github.io/feature-flag-demo${product.image}`;
 
   return (
-    <div className="product-card">
+    <div className="product-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <Link href={`/product/${product.id}`}>
         <div className="relative w-full h-64">
           <img
@@ -31,8 +31,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           />
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-semibold">{product.name}</h3>
-          <p className="text-gray-600">{product.price}€</p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            {product.name}
+          </h3>
+          <p className="text-xl font-bold text-blue-600">€{product.price}</p>
         </div>
       </Link>
     </div>

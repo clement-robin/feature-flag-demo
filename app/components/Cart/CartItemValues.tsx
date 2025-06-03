@@ -3,6 +3,9 @@
 import ProductQuantitySelector from "../Product/ProductQuantitySelector";
 import ProductQuantitySelector2 from "../Product/ProductQuantitySelector2";
 
+
+
+
 interface Props {
   price: number;
   quantity: number;
@@ -18,7 +21,7 @@ export default function CartItemValues({
     <div>
       <p className="font-medium">{price} €</p>
       <div className="mt-1">
-        <ProductQuantitySelector2
+        <ProductQuantitySelector
           onQuantityChange={onQuantityChange}
           initialQuantity={quantity}
         />
