@@ -20,9 +20,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kameleoon - FF",
   description: "Feature Flag Kameleoon",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -34,6 +31,14 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <KameleoonCookie />
       <head>
+        <link
+          rel="icon"
+          href={
+            process.env.NODE_ENV === "production"
+              ? "/feature-flag-demo/favicon.ico"
+              : "/favicon.ico"
+          }
+        />
         <Script
           type="text/javascript"
           src="//hpy9fwy751.kameleoon.io/engine.js"
