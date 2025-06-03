@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fevents\u002F[slug]","\u002Fproduct\u002F[id]","\u002Fsubscriptions\u002F[slug]","\u002Ftravel\u002F[id]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
