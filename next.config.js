@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", 
-  basePath: "/feature-flag-demo", 
+  output: "export",
+  basePath: process.env.NODE_ENV === "production" ? "/feature-flag-demo" : "",
   images: {
-    unoptimized: true, 
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -13,8 +13,6 @@ const nextConfig = {
     ],
   },
   eslint: {
-    
-    
     ignoreDuringBuilds: true,
   },
 };

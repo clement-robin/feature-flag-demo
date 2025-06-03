@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kameleoon - FF",
   description: "Feature Flag Kameleoon",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
